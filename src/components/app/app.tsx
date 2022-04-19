@@ -22,7 +22,6 @@ const App: React.FC<Props> = () => {
           <Physics gravity={[0, -30, 0]}>
             <Ground />
             <Player />
-            <></>
           </Physics>
         </React.Suspense>
         {config.devMode && <OrbitControls />}
