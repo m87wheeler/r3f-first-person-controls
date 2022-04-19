@@ -6,7 +6,6 @@ interface Props extends BoxProps {}
 
 const Step: React.FC<Props> = ({ ...props }) => {
   const args: Vector3Tuple = props?.args || [3, 0.25, 3];
-  const [hover, set] = React.useState(false);
   const [ref] = useBox(() => ({
     args,
     type: "Static",
@@ -17,10 +16,8 @@ const Step: React.FC<Props> = ({ ...props }) => {
     <mesh
       // @ts-ignore
       ref={ref}
-      onPointerEnter={() => set(true)}
-      onPointerLeave={() => set(false)}
     >
-      <meshStandardMaterial color={hover ? "grey" : "white"} />
+      <meshStandardMaterial color={"white"} />
       <boxBufferGeometry args={args} />
     </mesh>
   );

@@ -11,6 +11,8 @@ function moveFieldByKey(key: string) {
     KeyA: "moveLeft",
     KeyD: "moveRight",
     Space: "jump",
+    ArrowRight: "rotateClockwise",
+    ArrowLeft: "rotateAntiClockwise",
   };
   return keys[key];
 }
@@ -22,6 +24,8 @@ export const usePlayerControls = () => {
     moveLeft: false,
     moveRight: false,
     jump: false,
+    rotateClockwise: false,
+    rotateAntiClockwise: false,
   });
 
   React.useEffect(() => {

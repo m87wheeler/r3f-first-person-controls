@@ -9,6 +9,7 @@ import { Vector3 } from "three";
 import config from "../../config";
 import Stairs from "../stairs/stairs";
 import Floor from "../floor/floor";
+import StairsUpper from "../stairs/stairs-upper";
 
 interface Props {}
 
@@ -25,8 +26,10 @@ const App: React.FC<Props> = () => {
             <Ground />
             <Player />
             <>
+              s
               <Stairs />
-              <Floor />
+              <StairsUpper />
+              <Floor position={[5.5, 13 * 0.5 - 0.125, 6.5]} />
             </>
           </Physics>
         </React.Suspense>
