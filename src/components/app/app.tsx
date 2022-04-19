@@ -6,6 +6,7 @@ import { OrbitControls, Sky } from "@react-three/drei";
 import config from "../../config";
 import Ground from "../ground/ground";
 import Player from "../player/player";
+import Scene from "../scene/scene";
 import PlayerCamera from "../player/camera";
 
 interface Props {}
@@ -22,6 +23,7 @@ const App: React.FC<Props> = () => {
           <Physics gravity={[0, -30, 0]}>
             <Ground />
             <Player />
+            <Scene />
           </Physics>
         </React.Suspense>
         {config.devMode && <OrbitControls />}

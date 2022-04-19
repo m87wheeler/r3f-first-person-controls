@@ -13,7 +13,7 @@ const Ground: React.FC<Props> = ({ ...props }) => {
   return (
     // @ts-ignore
     <mesh ref={ref}>
-      <planeBufferGeometry attach="geometry" args={[100, 100]} />
+      <planeBufferGeometry attach="geometry" args={[50, 50]} />
       <meshStandardMaterial color="green" />
     </mesh>
   );
