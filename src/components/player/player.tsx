@@ -1,8 +1,8 @@
+import * as React from "react";
 import { useSphere } from "@react-three/cannon";
 import { useFrame, useThree } from "@react-three/fiber";
-import * as React from "react";
-import { Vector3, Vector3Tuple } from "three";
 import { usePlayerControls } from "../../hooks/use-player-controls";
+import { Vector3, Vector3Tuple } from "three";
 import config from "../../config";
 import PointLockControls from "../controls/point-lock";
 

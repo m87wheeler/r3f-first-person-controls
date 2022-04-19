@@ -1,6 +1,6 @@
-import { PointerLockControls as Controls } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
 import * as React from "react";
+import { useThree } from "@react-three/fiber";
+import { PointerLockControls as Controls } from "@react-three/drei";
 
 interface Props {}
 

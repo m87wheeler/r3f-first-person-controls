@@ -1,5 +1,5 @@
-import { usePlane } from "@react-three/cannon";
 import * as React from "react";
+import { usePlane } from "@react-three/cannon";
 
 interface Props {}
 

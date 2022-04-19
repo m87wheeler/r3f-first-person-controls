@@ -1,5 +1,5 @@
-import { BoxProps, useBox } from "@react-three/cannon";
 import * as React from "react";
+import { BoxProps, useBox } from "@react-three/cannon";
 import { Vector3Tuple } from "three";
 
 interface Props extends BoxProps {}
