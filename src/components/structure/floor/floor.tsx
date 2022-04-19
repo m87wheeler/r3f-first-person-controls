@@ -5,9 +5,25 @@ import { Vector3Tuple } from "three";
 interface Props extends BoxProps {
   args: Vector3Tuple;
   color?: string | number;
+  map?: any;
+  displacementMap?: any;
+  normalMap?: any;
+  roughnessMap?: any;
+  aoMap?: any;
+  displacementScale?: number;
 }
 
-const Floor: React.FC<Props> = ({ args, color, ...props }) => {
+const Floor: React.FC<Props> = ({
+  args,
+  color,
+  map,
+  displacementMap,
+  normalMap,
+  roughnessMap,
+  aoMap,
+  displacementScale,
+  ...props
+}) => {
   const [ref] = useBox(() => ({
     type: "Static",
     args,
@@ -17,7 +33,14 @@ const Floor: React.FC<Props> = ({ args, color, ...props }) => {
   return (
     // @ts-ignore
     <mesh ref={ref} castShadow {...props}>
-      <meshPhysicalMaterial color={color ? color : "white"} />
+      <meshPhongMaterial
+        color={color ? color : "white"}
+        map={map}
+        displacementMap={displacementMap}
+        normalMap={normalMap}
+        aoMap={aoMap}
+        displacementScale={displacementScale}
+      />
       <boxBufferGeometry args={args} />
     </mesh>
   );

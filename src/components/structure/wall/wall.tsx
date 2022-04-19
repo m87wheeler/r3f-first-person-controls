@@ -7,9 +7,26 @@ interface Props extends PlaneProps {
   args: Vector2Tuple;
   doubleSided?: boolean;
   color?: string | number;
+  map?: any;
+  displacementMap?: any;
+  normalMap?: any;
+  roughnessMap?: any;
+  aoMap?: any;
+  displacementScale?: number;
 }
 
-const Wall: React.FC<Props> = ({ args, doubleSided, color, ...props }) => {
+const Wall: React.FC<Props> = ({
+  args,
+  doubleSided,
+  color,
+  map,
+  displacementMap,
+  normalMap,
+  roughnessMap,
+  aoMap,
+  displacementScale,
+  ...props
+}) => {
   const [ref] = usePlane(() => ({
     args,
     ...props,
@@ -19,9 +36,14 @@ const Wall: React.FC<Props> = ({ args, doubleSided, color, ...props }) => {
     // @ts-ignore
     <mesh ref={ref} castShadow receiveShadow>
       <planeBufferGeometry attach="geometry" args={args} />
-      <meshPhysicalMaterial
+      <meshPhongMaterial
         color={color ? color : "white"}
         side={THREE[doubleSided ? "DoubleSide" : "FrontSide"]}
+        map={map}
+        displacementMap={displacementMap}
+        normalMap={normalMap}
+        aoMap={aoMap}
+        displacementScale={displacementScale}
       />
     </mesh>
   );

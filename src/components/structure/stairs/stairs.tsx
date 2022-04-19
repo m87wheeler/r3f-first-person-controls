@@ -19,7 +19,7 @@ const Stairs: React.FC<Props> = ({
       {Array.from(Array(stepTotal)).map((_, i) => (
         <Step
           key={i}
-          args={[3, stepHeight, 3]}
+          args={[1, stepHeight / 4, 3]}
           position={[i * 0.75, 0.25 + i * stepHeight + rise, 0]}
           color={color}
         />

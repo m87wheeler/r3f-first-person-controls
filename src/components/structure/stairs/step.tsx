@@ -1,6 +1,8 @@
 import * as React from "react";
+import * as THREE from "three";
 import { BoxProps, useBox } from "@react-three/cannon";
 import { Vector3Tuple } from "three";
+import { useTexture } from "@react-three/drei";
 
 interface Props extends BoxProps {
   color?: string | number;
@@ -14,6 +16,15 @@ const Step: React.FC<Props> = ({ color, ...props }) => {
     ...props,
   }));
 
+  const [floorCMap, floorNMap] = useTexture([
+    "assets/materials/wood-floor/base-color.jpg",
+    "assets/materials/wood-floor/normal.jpg",
+  ]);
+  if (floorCMap) {
+    floorCMap.wrapS = floorCMap.wrapT = THREE.RepeatWrapping;
+    floorCMap.repeat.set(0.5, 1);
+  }
+
   return (
     <mesh
       // @ts-ignore
@@ -21,7 +32,11 @@ const Step: React.FC<Props> = ({ color, ...props }) => {
       castShadow
       receiveShadow
     >
-      <meshPhysicalMaterial color={color ? color : "white"} />
+      <meshPhongMaterial
+        color={color ? color : "white"}
+        map={floorCMap}
+        normalMap={floorNMap}
+      />
       <boxBufferGeometry args={args} />
     </mesh>
   );
