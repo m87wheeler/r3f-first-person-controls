@@ -18,8 +18,10 @@ const Step: React.FC<Props> = ({ color, ...props }) => {
     <mesh
       // @ts-ignore
       ref={ref}
+      castShadow
+      receiveShadow
     >
-      <meshStandardMaterial color={color ? color : "white"} />
+      <meshPhysicalMaterial color={color ? color : "white"} />
       <boxBufferGeometry args={args} />
     </mesh>
   );

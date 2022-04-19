@@ -17,9 +17,9 @@ const Wall: React.FC<Props> = ({ args, doubleSided, color, ...props }) => {
 
   return (
     // @ts-ignore
-    <mesh ref={ref}>
+    <mesh ref={ref} castShadow receiveShadow>
       <planeBufferGeometry attach="geometry" args={args} />
-      <meshStandardMaterial
+      <meshPhysicalMaterial
         color={color ? color : "white"}
         side={THREE[doubleSided ? "DoubleSide" : "FrontSide"]}
       />

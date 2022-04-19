@@ -16,8 +16,8 @@ const Floor: React.FC<Props> = ({ args, color, ...props }) => {
 
   return (
     // @ts-ignore
-    <mesh ref={ref} {...props}>
-      <meshStandardMaterial color={color ? color : "white"} />
+    <mesh ref={ref} castShadow {...props}>
+      <meshPhysicalMaterial color={color ? color : "white"} />
       <boxBufferGeometry args={args} />
     </mesh>
   );

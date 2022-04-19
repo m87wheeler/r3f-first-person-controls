@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useThree } from "@react-three/fiber";
 import { PointerLockControls as Controls } from "@react-three/drei";
 
 interface Props {}
@@ -17,8 +17,6 @@ const PointLockControls: React.FC<Props> = ({ ...props }) => {
     document.addEventListener("click", lockControls);
     return () => document.removeEventListener("click", lockControls);
   }, []);
-
-  useFrame(() => {});
 
   // @ts-ignore
   return <Controls ref={controls} args={[camera, gl.domElement]} {...props} />;
