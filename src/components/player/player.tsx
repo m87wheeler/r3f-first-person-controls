@@ -80,7 +80,7 @@ const Player: React.FC<Props> = ({ ...props }) => {
       {/** @ts-ignore */}
       <mesh ref={ref}>
         <sphereBufferGeometry />
-        <meshBasicMaterial color="hotpink" />
+        <meshBasicMaterial color="gray" />
       </mesh>
       {!config.devMode && <PointLockControls />}
     </>

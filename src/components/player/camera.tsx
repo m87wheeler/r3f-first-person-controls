@@ -1,11 +1,13 @@
 import * as React from "react";
-import { PerspectiveCamera } from "@react-three/drei";
+import { CameraHelper } from "three";
+import { PerspectiveCamera, useHelper } from "@react-three/drei";
 import config from "../../config";
 
 interface Props {}
 
 const PlayerCamera: React.FC<Props> = ({ ...props }) => {
   const ref = React.useRef();
+  useHelper(config.devMode ? null : ref, CameraHelper);
 
   return (
     <PerspectiveCamera

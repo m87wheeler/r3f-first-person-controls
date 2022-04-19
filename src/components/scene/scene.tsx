@@ -20,7 +20,7 @@ const Scene: React.FC<Props> = () => {
         stepHeight={step.height}
         stepTotal={step.total}
         rise={0.25}
-        color="dodgerblue"
+        color="orange"
       />
       {/** FIRST FLOOR */}
       <Floor args={[30, 0.5, 10]} position={[5, 8, 15]} color="tomato" />
