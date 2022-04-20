@@ -7,6 +7,7 @@ import Player from "../player/player";
 import Scene from "../scene/scene";
 import PlayerCamera from "../player/camera";
 import Lighting from "../lighting/lighting";
+import Instructions from "./instructions";
 
 softShadows();
 
@@ -28,6 +29,7 @@ const App: React.FC<Props> = () => {
         </React.Suspense>
         {config.devMode && <OrbitControls />}
       </Canvas>
+      <Instructions />
     </div>
   );
 };
